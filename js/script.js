@@ -67,7 +67,8 @@ prevPkmn = () =>{
 
 shiny = () =>{
     shiny=true;
-
+    document.getElementById("shiny-button").style.backgroundColor="#fdd246";
+    document.getElementById("normal-button").style.backgroundColor="#c79800";
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -77,11 +78,12 @@ shiny = () =>{
     };
     xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
-  }
+}
 
 normal = () =>{
     shiny=false;
-    
+    document.getElementById("normal-button").style.backgroundColor="#fdd246";
+    document.getElementById("shiny-button").style.backgroundColor="#c79800";
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -91,4 +93,4 @@ normal = () =>{
     };
     xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
-  }
+}
