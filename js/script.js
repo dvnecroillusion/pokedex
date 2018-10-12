@@ -18,6 +18,8 @@ prev = () =>{
 }
 
 
+let shiny=false;
+
 function loadDoc() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -26,8 +28,14 @@ function loadDoc() {
             document.getElementById("id").innerHTML = res.id;
             document.getElementById("name").innerHTML = res.name;
             document.getElementById("weight").innerHTML = res.weight;
-          // document.getElementById("image").display = block;
-            document.getElementById("image").src = res.sprites.front_default;
+            if (shiny===true)
+            {
+
+                document.getElementById("image").src = res.sprites.front_shiny;
+            }else{
+                document.getElementById("image").src = res.sprites.front_default;
+            }
+            document.getElementById("image").style.visibility = "visible";
             document.getElementById("hp").innerHTML = res.stats[5].base_stat;
             document.getElementById("def").innerHTML = res.stats[3].base_stat;
             document.getElementById("sdef").innerHTML = res.stats[1].base_stat;
@@ -35,13 +43,18 @@ function loadDoc() {
             document.getElementById("satk").innerHTML = res.stats[2].base_stat;
             document.getElementById("spd").innerHTML = res.stats[0].base_stat;
            // console.log(xhttp.responseText);
-           return res;
+            /*if (res.types[1].type.name !== null){
+            let pkmntype = `${res.types[0].type.name} + ${res.types[1].type.name}`;
+            }else{
+            let pkmntype = res.types[0].type.name;
+            }*/
+            document.getElementById("type1").innerHTML = res.types[0].type.name;
       }
       /*else{
           window.alert("DAMMI TEMPO");
       }*/
     };
-    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, false);
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
   }
 
@@ -51,11 +64,31 @@ nextPkmn = () =>{
 prevPkmn = () =>{
     prev(), loadDoc();
 }
-/*
+
 shiny = () =>{
-    document.getElementById("image").src = res.sprites.shiny;
-}
+    shiny=true;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(xhttp.responseText);
+            document.getElementById("image").src = res.sprites.front_shiny;
+      }
+    };
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
+    xhttp.send();
+  }
 
 normal = () =>{
-    let color= false;
- }*/
+    shiny=false;
+    
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+            res = JSON.parse(xhttp.responseText);
+            document.getElementById("image").src = res.sprites.front_default;
+      }
+    };
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
+    xhttp.send();
+  }
