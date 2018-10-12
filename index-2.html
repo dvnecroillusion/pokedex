@@ -1,0 +1,97 @@
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>POKEDEX NABBO</title>
+        <script src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link type="text/css" rel="stylesheet" href="css/style-2.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"><!--row0-->
+                <div class="col-md-12 pokedex"><!--col0-->
+                    <div class="row"><!--row1-->
+                        <button onclick="loadDoc()" id="accensione"></button>
+                        <button onclick="prevPkmn()" id="prev"></button>
+                        <button onclick="nextPkmn()" id="next"></button>
+                        <img src="css/pkdx.png" alt="Pokedex" id="pkdx">
+                    </div>
+                    <div class="row"><!--row2-->
+                        <div class="col-md-8" id="colDisplay">
+                            <div id="display">
+                                <img src="" alt="" id="image">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-container">
+                                <div class="row info">ID</div>
+                                <div class="row">
+                                    <div id="id" class="info-2"></div>
+                                </div>
+                                <div class="row info">Name</div>
+                                <div class="row">
+                                    <div id="name" class="info-2"></div>
+                                </div>
+                                <div class="row info">Weight</div>
+                                <div class="row">
+                                    <div id="weight" class="info-2"></div>
+                                </div>
+                                <div class="row info">Type</div>
+                                <div class="row">
+                                    <div id="type" class="info-2"></div>
+                                </div>
+                            </div>                         
+                        </div>  
+                    </div>
+                    <div class="row"><!--row3-->
+                        <div class="col-md-6">
+                            <div class="row stat">HP</div>
+                            <div class="row">
+                                <div id="hp"></div>
+                            </div>
+                            <div class="row stat">DEF</div>
+                            <div class="row">
+                                <div id="def"></div>
+                            </div>
+                            <div class="row stat">SDEF</div>
+                            <div class="row">
+                                <div id="sdef"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="row stat">ATK</div>
+                                <div class="row">
+                                    <div id="atk"></div>
+                                </div>
+                                <div class="row stat">SATK</div>
+                                <div class="row">
+                                    <div id="satk"></div>
+                                </div>
+                                <div class="row stat">SPD</div>
+                                <div class="row">
+                                    <div id="spd"></div>
+                                </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-md-6 pkdx-footer">
+                            <button class="final-butt" onclick="shiny()">SHINY</button>
+                        </div>
+                        <div class="col-md-6 pkdx-footer">
+                            <button class="final-butt" onclick="normal()">NORMAL</button>
+                        </div>
+                    </div><!--row4-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr id="hr-copy">
+        <div class="footer">
+            <address>Copyright @2018 Sam Ataxia</address>
+        </div>
+    </body>
+</html>
