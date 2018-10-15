@@ -5,12 +5,12 @@ next = () =>{
         i=1;
         console.log(i);
     }else{
-        i=i+1;
+        i++;
     }
 }
 prev = () =>{
     if (i>1){
-    i=i-1;
+    i--;
     console.log(i);
     }else{
        i=802; 
@@ -65,8 +65,8 @@ prevPkmn = () =>{
     prev(), loadDoc();
 }
 
-shiny = () =>{
-    shiny=true;
+shinyButt = () =>{
+    shiny = true;
     document.getElementById("shiny-button").style.backgroundColor="#fdd246";
     document.getElementById("normal-button").style.backgroundColor="#c79800";
     let xhttp = new XMLHttpRequest();
@@ -78,10 +78,11 @@ shiny = () =>{
     };
     xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
+    return shiny;
 }
 
-normal = () =>{
-    shiny=false;
+normalButt = () =>{
+    shiny = false;
     document.getElementById("normal-button").style.backgroundColor="#fdd246";
     document.getElementById("shiny-button").style.backgroundColor="#c79800";
     let xhttp = new XMLHttpRequest();
@@ -93,4 +94,5 @@ normal = () =>{
     };
     xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
+    return shiny;
 }
