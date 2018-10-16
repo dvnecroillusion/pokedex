@@ -20,27 +20,20 @@
                         <button onclick="prevPkmn()" id="prev"></button>
                         <button onclick="nextPkmn()" id="next"></button>
                         <div id="idsearch">ID:</div>
-                        <input type="number" id="search" value="" oninput="searchRefresh()">
+                        <input type="number" id="search" value="" oninput="searchRefreshId()">
                         <div id="idsearch2">Name:</div>    
-                        <input type="text" id="search2" value="" oninput="">
+                        <input type="text" id="search2" value="" oninput="getSearchName()">
                         <div id="idsearch3"></div>
                     </div>
                     <div class="row"><!--row2-->
                         <div class="col-md-8" id="colDisplay">
                             <div id="display">
                                 <img src="" alt="" id="image">
+                                <img src="css/arrow.png" alt="arrows" id="rotatePkmn" onclick="rotate()">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info-container">
-                                <div class="row info">ID</div>
-                                <div class="row">
-                                    <div id="id" class="info-2"></div>
-                                </div>
-                                <div class="row info">Name</div>
-                                <div class="row">
-                                    <div id="name" class="info-2"></div>
-                                </div>
                                 <div class="row info">Weight</div>
                                 <div class="row">
                                     <div id="weight" class="info-2"></div>
@@ -53,6 +46,12 @@
                                 <div class="row">
                                     <div id="type2" class="info-2"></div>
                                 </div>
+                                <div class="row pkdx-footer">
+                                    <button class="final-butt" onclick="shinyButt()" id="shiny-button">SHINY</button>
+                                </div>
+                                <div class="row pkdx-footer">
+                                    <button class="final-butt" onclick="normalButt()" id="normal-button">NORMAL</button>
+                                </div>
                             </div>                         
                         </div>  
                     </div>
@@ -61,42 +60,53 @@
                             <div class="row stat">HP 
                                 <div class="info-3" id="hp"></div>
                             </div>
-                            <div class="row">
+                            <div class="w3-container">
+                                <div class="w3-border"> 
+                                    <div id="hpBar">asdasdasd</div>
+                                </div>
                             </div>
                             <div class="row stat">DEF 
                                 <div class="info-3" id="def"></div>                                
                             </div>
-                            <div class="row">
+                            <div class="w3-container">
+                                <div class="w3-border"> 
+                                    <div id="defBar"></div>
+                                </div>
                             </div>
                             <div class="row stat">SDEF 
                                 <div class="info-3" id="sdef"></div>
                             </div>
-                            <div class="row">
+                            <div class="w3-container">
+                                <div class="w3-border"> 
+                                    <div id="sdefBar"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="row stat">ATK 
                                     <div class="info-3" id="atk"></div>
                                 </div>
-                                <div class="row">
+                                <div class="w3-container">
+                                    <div class="w3-border"> 
+                                        <div id="atkBar"></div>
+                                    </div>
                                 </div>
                                 <div class="row stat">SATK 
                                     <div class="info-3" id="satk"></div>
                                 </div>
-                                <div class="row">
+                                <div class="w3-container">
+                                    <div class="w3-border"> 
+                                        <div id="satkBar"></div>
+                                    </div>
                                 </div>
                                 <div class="row stat">SPD 
                                     <div class="info-3" id="spd"></div>
                                 </div>
-                                <div class="row">
+                                <div class="w3-container">
+                                    <div class="w3-border"> 
+                                        <div id="spdBar"></div>
+                                    </div>
                                 </div>
-                        </div>
-                    <div class="row">
-                        <div class="col-md-6 pkdx-footer">
-                            <button class="final-butt" onclick="shinyButt()" id="shiny-button">SHINY</button>
-                        </div>
-                        <div class="col-md-6 pkdx-footer">
-                            <button class="final-butt" onclick="normalButt()" id="normal-button">NORMAL</button>
                         </div>
                         <!--<div class="row">
                             <div class="col-md-12">
