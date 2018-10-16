@@ -19,9 +19,11 @@
                         <button onclick="loadDoc()" id="accensione"></button>
                         <button onclick="prevPkmn()" id="prev"></button>
                         <button onclick="nextPkmn()" id="next"></button>
-                        <div id="idz">ID:</div>
+                        <div id="idsearch">ID:</div>
                         <input type="number" id="search" value="" oninput="searchRefresh()">
-                        <img src="css/pkdx.png" alt="Pokedex" id="pkdx">
+                        <div id="idsearch2">Name:</div>    
+                        <input type="text" id="search2" value="" oninput="">
+                        <div id="idsearch3"></div>
                     </div>
                     <div class="row"><!--row2-->
                         <div class="col-md-8" id="colDisplay">
@@ -96,6 +98,11 @@
                         <div class="col-md-6 pkdx-footer">
                             <button class="final-butt" onclick="normalButt()" id="normal-button">NORMAL</button>
                         </div>
+                        <!--<div class="row">
+                            <div class="col-md-12">
+                                <img src="css/pkdx.png" alt="Pokedex" id="pkdx">
+                            </div>
+                        </div>-->
                     </div><!--row4-->
                     </div>
                 </div>

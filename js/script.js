@@ -1,5 +1,13 @@
-//funzioni di incremento e decremento n° pkmn
 let i=1;
+let shiny=false;
+
+//funzioni di incremento e decremento n° pkmn + fx input id
+
+getSearch = () => {
+    i = document.getElementById("search").value;
+    return i;
+}
+
 next = () =>{
     if (i==802){
         i=1;
@@ -8,6 +16,7 @@ next = () =>{
         i++;
     }
 }
+
 prev = () =>{
     if (i>1){
     i--;
@@ -17,7 +26,7 @@ prev = () =>{
     }
 }
 
-let shiny=false;
+//ajax con restituzione dati in output
 
 function loadDoc() {
     let xhttp = new XMLHttpRequest();
@@ -57,10 +66,8 @@ function loadDoc() {
   }
 
 
-getSearch = () => {
-    i = document.getElementById("search").value;
-    return i;
-}
+//fx di gestione tasto frecce con aggiornamento pkmn e ricerca id con agg pkmn
+
 
 searchRefresh = () =>{
     getSearch(), loadDoc();
@@ -73,6 +80,8 @@ nextPkmn = () =>{
 prevPkmn = () =>{
     prev(), loadDoc();
 }
+
+//fx colorazione pkmn
 
 shinyButt = () =>{
     shiny = true;
