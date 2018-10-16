@@ -17,7 +17,6 @@ prev = () =>{
     }
 }
 
-
 let shiny=false;
 
 function loadDoc() {
@@ -42,14 +41,13 @@ function loadDoc() {
             document.getElementById("atk").innerHTML = res.stats[4].base_stat;
             document.getElementById("satk").innerHTML = res.stats[2].base_stat;
             document.getElementById("spd").innerHTML = res.stats[0].base_stat;
-           // console.log(xhttp.responseText);
-            /*if (res.types[1].type.name !== null){
-            let pkmntype = `${res.types[0].type.name} + ${res.types[1].type.name}`;
-            }else{
-            let pkmntype = res.types[0].type.name;
-            }*/
+           // sezione per tipi pokemon
             document.getElementById("type1").innerHTML = res.types[0].type.name;
-      }
+            for(let i =0; i < res.types.length; i++) {
+                i === 0 ? document.getElementById("type2").innerHTML = ""
+                        :  document.getElementById("type2").innerHTML = res.types[1].type.name     
+             }
+        }
       /*else{
           window.alert("DAMMI TEMPO");
       }*/
@@ -57,6 +55,17 @@ function loadDoc() {
     xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${i}/`, true);
     xhttp.send();
   }
+
+
+getSearch = () => {
+    i = document.getElementById("search").value;
+    return i;
+}
+
+searchRefresh = () =>{
+    getSearch(), loadDoc();
+}
+
 
 nextPkmn = () =>{
     next(), loadDoc();
