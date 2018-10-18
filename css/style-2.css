@@ -115,31 +115,43 @@ body{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 #atkBar{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 #defBar{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 #satkBar{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 #sdefBar{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 #spdBar{
     height:15px;
     width:0%;
     background-color: aqua;
+    line-height: 15px;
+    font-weight:bold;
 }
 .stat{
     margin:25px;

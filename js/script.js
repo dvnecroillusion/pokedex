@@ -9,21 +9,9 @@ getSearchId = () => {
     return i;
 }
 
-getSearchName = () =>{
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-            res = JSON.parse(xhttp.responseText);
-            }
-    };
-    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/`, true);
-    xhttp.send();
-    console.log(res);
-    for(let k=1; k<802; k++){
-        if(document.getElementById("search").value === res.name){
-            i = res.id;
-        }
-    }
+getSearchName = () => {
+    i = document.getElementById("search2").value;
+    console.log(i);
     return i;
 }
 
@@ -65,7 +53,6 @@ function loadDoc() {
             document.getElementById("image").style.visibility = "visible";
             document.getElementById("hp").innerHTML = res.stats[5].base_stat;
             document.getElementById("hpBar").style.width = ((145*res.stats[5].base_stat)/300);
-            document.getElementById("hpBar").innerHTML = res.stats[5].base_stat;
             document.getElementById("def").innerHTML = res.stats[3].base_stat;
             document.getElementById("defBar").style.width = ((145*res.stats[3].base_stat)/300);
             document.getElementById("sdef").innerHTML = res.stats[1].base_stat;
@@ -97,6 +84,10 @@ function loadDoc() {
 
 searchRefreshId = () =>{
     getSearchId(), loadDoc();
+}
+
+searchRefreshName = () =>{
+    getSearchName(), loadDoc();
 }
 
 nextPkmn = () =>{
